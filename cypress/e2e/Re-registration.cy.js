@@ -8,7 +8,7 @@ describe('Registration Functionality', () => {
 
     // Fill in the registration form
     const userDetails = {
-      firstName: `${Date.now()}`, // Generate unique first name
+      firstName: 'Gervazio',
       lastName: 'Tyles',
       address: 'Street Test',
       city: 'Dublin',
@@ -16,7 +16,7 @@ describe('Registration Functionality', () => {
       zipCode: 'G3T B8G',
       phone: '1 999 999 999',
       ssn: '--',
-      username: `user_${Date.now()}`, // Generate unique username
+      username: 'Gervazio',
       password: `pass_${Date.now()}`, // Generate unique password
     };
 
@@ -35,25 +35,7 @@ describe('Registration Functionality', () => {
     // Submit the form
     cy.get('[colspan="2"] > .button').click();
 
-    // Validate successful registration
-    cy.contains('Your account was created successfully').should('be.visible');
-
-    // Validate successful login 
-    cy.contains(userDetails.firstName).should('be.visible');
-    // Log generated user details for debugging purposes
-    cy.log(`Generated Username: ${userDetails.username}`);
-    cy.log(`Generated Password: ${userDetails.password}`);
-
-    // Log out if the application redirects to a logged-in state (optional)
-    cy.get('#leftPanel > ul > :nth-child(8) > a').should('be.visible').click();
-
-    // Log in using the generated credentials
-    cy.get("input[name='username']").type(userDetails.username);
-    cy.get("input[name='password']").type(userDetails.password);
-    cy.get("input[value='Log In']").click();
-
-    // Validate successful login
-    cy.contains(`Welcome ${userDetails.firstName}`).should('be.visible'); // Check for a welcome message
-    cy.get('#leftPanel > ul > :nth-child(8) > a').should('be.visible'); // Ensure logout link is displayed
+    // Validate successful re-registration username already exists.
+    cy.contains('This username already exists.').should('be.visible');      
   });
 });
