@@ -1,5 +1,6 @@
-describe('Registration Functionality', () => {
-  it('Registers a new user successfully', () => {
+export function reRegistration() {
+describe('Re-registration Functionality', () => {
+  it('Validate successful re-registration username already exists', () => {
     // Visit the application
     cy.visit('https://parabank.parasoft.com/parabank/index.htm');
 
@@ -17,7 +18,7 @@ describe('Registration Functionality', () => {
       phone: '1 999 999 999',
       ssn: '--',
       username: 'Gervazio',
-      password: `pass_${Date.now()}`, // Generate unique password
+      password: `pass_${Date.now()}`, // Generate unique passwordclear
     };
 
     cy.get('#customer\\.firstName').type(userDetails.firstName);
@@ -39,3 +40,4 @@ describe('Registration Functionality', () => {
     cy.contains('This username already exists.').should('be.visible');      
   });
 });
+}

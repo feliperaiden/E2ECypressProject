@@ -1,3 +1,4 @@
+export function registration() {
 describe('Registration Functionality', () => {
   it('Registers a new user successfully', () => {
     // Visit the application
@@ -57,3 +58,4 @@ describe('Registration Functionality', () => {
     cy.get('#leftPanel > ul > :nth-child(8) > a').should('be.visible'); // Ensure logout link is displayed
   });
 });
+}

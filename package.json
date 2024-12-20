@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "Felipe Acacio Dos Santos",
   "license": "ISC",
   "description": "Cypress Automation",
   "devDependencies": {
-    "cypress": "^13.15.1"
+    "cypress": "^13.17.0",
+    "dotenv": "^16.4.7"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",

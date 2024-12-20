@@ -1,3 +1,4 @@
+export function login() {
 describe('Launch Application', () => {
   it('Launch The Test Application and Enter Credentials', () => {
     // Generate dynamic credentials using the current timestamp
@@ -18,3 +19,4 @@ describe('Launch Application', () => {
    // cy.get("input[value='Log In']").click(); // Click the login button
   });
 });
+}

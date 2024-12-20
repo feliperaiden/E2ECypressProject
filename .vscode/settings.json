@@ -1,0 +1,4 @@
+{
+    "cypressTestExplorer.configFile": "cypress.config.js",
+    "cypressTestExplorer.projectPath": "./"
+}
